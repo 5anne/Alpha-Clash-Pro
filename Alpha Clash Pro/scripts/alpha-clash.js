@@ -8,8 +8,18 @@
 //     playgroundSection.classList.remove('hidden');
 // }
 
+function continueGame(){
+    const alphabet = getARandomAlphabet();
+    console.log(alphabet);
+
+    const  currentAlphabetElemnet = document.getElementById('current-alphabet');
+    currentAlphabetElemnet.innerText = alphabet;
+
+    setBackgroundById(alphabet);
+}
 
 function playNow(){
     hideElementById('home-screen');
     showElementById('play-ground');
+    continueGame();
 }
