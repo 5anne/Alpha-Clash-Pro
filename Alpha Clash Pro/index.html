@@ -74,26 +74,27 @@
                 </div>
                 <div class="flex justify-between w-2/3">
                     <button class="btn bg-purple-500 rounded-full border-none text-white">
-                        Like
+                        Life
                         <i class="fa-solid fa-heart-circle-bolt"></i>
-                        <span>1</span>
+                        <span id="current-life">5</span>
                     </button>
                     <button class="btn bg-purple-950 rounded-full border-none text-white">
-                        Like
+                        Score
                         <i class="fa-solid fa-comment-dollar"></i>
-                        <span>1</span>
+                        <span id="current-score">0</span>
                     </button>
                 </div>
             </div>
         </section>
         <!-- Score Screen  -->
-        <section class="flex justify-center items-center min-h-screen hidden">
+        <section id="final-score" class="flex justify-center items-center min-h-screen hidden">
             <div class="text-white text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
+                <h3 class="text-3xl font-bold">Game Over!</h3>
                 <h1 class="text-8xl">
                     <span class="font-extrabold">Score:</span>
-                    <span>14</span>
+                    <span id="end-score">14</span>
                 </h1>
-                <button class="btn">Play Now</button>
+                <button onclick="playAgain()" class="btn">Play Now</button>
                 <P>Practice will make you a pro</P>
             </div>
         </section>

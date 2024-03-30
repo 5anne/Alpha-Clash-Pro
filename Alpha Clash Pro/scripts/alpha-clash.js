@@ -8,6 +8,69 @@
 //     playgroundSection.classList.remove('hidden');
 // }
 
+function playAgain(){
+    hideElementById('final-score');
+    hideElementById('home-screen');
+    showElementById('play-ground');
+
+    setInnerText('current-score', 0);
+    setInnerText('current-life', 5);
+    removeBackgroundById(expectedAlphabet);
+    continueGame();
+}
+
+
+function gameOver(){
+    hideElementById('play-ground');
+    showElementById('final-score');
+
+    const current_Score = getScoreById('current-score');
+    setInnerText('end-score', current_Score);
+}
+
+
+function handleKeyboardButton(event){
+    // console.log(event.key);
+    const playerPressed = event.key;
+
+    const  currentAlphabetElemnet = document.getElementById('current-alphabet');
+    const expectedAlphabet = currentAlphabetElemnet.innerText.toLowerCase();
+    console.log(playerPressed, expectedAlphabet);
+
+    if(playerPressed === 'Escape'){
+        gameOver();
+    }   
+
+    if(playerPressed === expectedAlphabet){
+        console.log('You get a point');
+        console.log('You have pressed correctly', expectedAlphabet);
+
+        const current_Score = document.getElementById('current-score');
+        const currentScore = parseInt(current_Score.innerText);
+
+        const newScore = currentScore + 1;
+        current_Score.innerText = newScore;
+
+        removeBackgroundById(expectedAlphabet);
+        continueGame();
+    }
+    else{
+        console.log('You missed. You lost a life');
+        const currentLifeElement = document.getElementById('current-life');
+        const currentLife = parseInt(currentLifeElement.innerText);
+
+        const newLife = currentLife - 1;
+        currentLifeElement.innerText = newLife;
+        if(newLife === 0){
+            gameOver();
+        }
+    }
+}
+
+
+document.addEventListener('keyup', handleKeyboardButton);
+
+
 function continueGame(){
     const alphabet = getARandomAlphabet();
     console.log(alphabet);
@@ -18,8 +81,10 @@ function continueGame(){
     setBackgroundById(alphabet);
 }
 
+
 function playNow(){
     hideElementById('home-screen');
     showElementById('play-ground');
     continueGame();
 }
+
