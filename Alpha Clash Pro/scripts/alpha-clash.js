@@ -26,6 +26,7 @@ function gameOver(){
 
     const current_Score = getScoreById('current-score');
     setInnerText('end-score', current_Score);
+    removeBackgroundById(expectedAlphabet);
 }
 
 
