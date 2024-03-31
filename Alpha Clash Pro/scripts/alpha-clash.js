@@ -15,7 +15,7 @@ function playAgain(){
 
     setInnerText('current-score', 0);
     setInnerText('current-life', 5);
-    removeBackgroundById(expectedAlphabet);
+    // removeBackgroundById(expectedAlphabet);
     continueGame();
 }
 
