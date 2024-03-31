@@ -26,7 +26,6 @@ function gameOver(){
 
     const current_Score = getScoreById('current-score');
     setInnerText('end-score', current_Score);
-    removeBackgroundById(expectedAlphabet);
 }
 
 
@@ -85,6 +84,7 @@ function continueGame(){
 
 function playNow(){
     hideElementById('home-screen');
+    hideElementById('final-score');
     showElementById('play-ground');
     continueGame();
 }
