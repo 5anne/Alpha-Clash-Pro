@@ -15,7 +15,7 @@ function playAgain(){
 
     setInnerText('current-score', 0);
     setInnerText('current-life', 5);
-    // removeBackgroundById(expectedAlphabet);
+    removeBackgroundById('current-alphabet');
     continueGame();
 }
 
@@ -51,7 +51,7 @@ function handleKeyboardButton(event){
         const newScore = currentScore + 1;
         current_Score.innerText = newScore;
 
-        // removeBackgroundById(expectedAlphabet);
+        removeBackgroundById('current-alphabet');
         continueGame();
     }
     else{
