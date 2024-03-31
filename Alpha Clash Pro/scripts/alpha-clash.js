@@ -51,7 +51,7 @@ function handleKeyboardButton(event){
         const newScore = currentScore + 1;
         current_Score.innerText = newScore;
 
-        removeBackgroundById(expectedAlphabet);
+        // removeBackgroundById(expectedAlphabet);
         continueGame();
     }
     else{
